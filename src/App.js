@@ -1,5 +1,5 @@
-import { render } from "@testing-library/react";
-import React, { useEffect } from "react";
+// import { render } from "@testing-library/react";
+import React from "react";
 import { formatTime } from "./formatTime";
 import useTimer from "./useTimer";
 
