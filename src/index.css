@@ -1,7 +1,8 @@
 :root {
-  --text-shadow-color: #ff9c99;
-  --text-main-color: #d74742;
+  --text-shadow-color: #000000;
+  --text-main-color: #ffffff;
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -23,17 +24,17 @@ code {
 }
 
 h1 {
-  color: var(--text-main-color);
-  font-family: "Rouge Script", cursive;
+  color: #e68600;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 130px;
   font-weight: normal;
   line-height: 48px;
   margin: 0 0 50px;
   text-align: center;
-  text-shadow: 1px 1px 2px var(--text-shadow-color);
+  /* text-shadow: 1px 1px 2px var(--text-shadow-color); */
 }
 
-p {
+span {
   color: #ffffff;
   font-family: "Carme", sans-serif;
   font-size: 16px;
@@ -55,9 +56,10 @@ p {
     rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
 }
 .timer__display {
-  padding-left: 1.5em;
+  /* padding-left: 1.5em; */
+  text-align: center;
 }
-.timer__display > p {
+.timer__display > span {
   font-size: 5em;
 }
 
@@ -74,19 +76,30 @@ p {
   font-size: 1.5em;
   border-radius: 100vh;
   border: 1px solid white;
-  padding: 1em;
-  transition: ease-in-out 0.3s;
+  padding: 0.5em;
+  /* transition: ease-in-out 0.3s; */
 }
 .button:active {
   border: 1px solid var(--text-main-color);
   background-color: var(--text-main-color);
 }
 .button:hover {
-  transform: scale(120%);
+  /* transform: scale(120%); */
+  background-color: rgb(170, 164, 164);
+  cursor: pointer;
 }
 .button:disabled {
   background-color: rgb(170, 164, 164);
 }
+
+.split-wrapper > ul {
+  list-style: none;
+}
+
+.split-wrapper > ul > li > span {
+  font-size: 2em;
+}
+
 /* .button.active {
   border: 1px solid var(--text-main-color);
   background-color: var(--text-main-color);

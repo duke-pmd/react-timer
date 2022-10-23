@@ -1,8 +1,13 @@
 export const formatTime = (time) => {
-  const getSeconds = "Your code here";
-  const minutes = "Your code here";
-  const getMinutes = "Your code here";
-  const getHours = "Your code here";
-
+  const timeValue = isNaN(time) ? 0 : time;
+  const getSeconds = Math.floor((timeValue % 3600) % 60)
+    .toString()
+    .padStart(2, "0");
+  const getMinutes = Math.floor((timeValue % 3600) / 60)
+    .toString()
+    .padStart(2, "0");
+  const getHours = Math.floor(timeValue / 3600)
+    .toString()
+    .padStart(2, "0");
   return `${getHours} : ${getMinutes} : ${getSeconds}`;
 };
