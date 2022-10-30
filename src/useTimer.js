@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 
 const useTimer = (ini = 0) => {
   const [time, setTime] = useState(useRef(ini));
-  const [splitRecords, setSplitRecords] = useState([]);
+  const [splitRecords, setSplitRecords] = useState(useRef([]));
 
   // const isStart = false;
   const active = useRef();
@@ -21,12 +21,17 @@ const useTimer = (ini = 0) => {
   const resetTimer = () => {
     setTime({ ...time, current: 0 });
     clearInterval(refInterval.current);
-    setSplitRecords([]);
+    setSplitRecords({
+      ...splitRecords,
+      current: [],
+    });
     active.current.disabled = false;
   };
   const splitTimer = () => {
-    splitRecords.push(time.current);
-    setSplitRecords(splitRecords);
+    setSplitRecords({
+      ...splitRecords,
+      current: [...splitRecords.current, time.current],
+    });
     active.current.disabled = false;
   };
 

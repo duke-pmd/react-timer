@@ -1,5 +1,6 @@
 // import { render } from "@testing-library/react";
 import React from "react";
+import { useEffect } from "react";
 import { formatTime } from "./formatTime";
 import useTimer from "./useTimer";
 
@@ -13,6 +14,8 @@ function App() {
     splitRecords,
     active,
   } = useTimer(0);
+
+  useEffect(() => console.log(splitRecords), [splitRecords]);
 
   return (
     <div className="App container">
@@ -37,7 +40,7 @@ function App() {
         </div>
         <div className="split-wrapper">
           <ul>
-            {splitRecords.map((record, index) => (
+            {splitRecords.current.map((record, index) => (
               <li key={index}>
                 <span>{`Split ${index + 1}:  ${formatTime(record)}`}</span>
               </li>
